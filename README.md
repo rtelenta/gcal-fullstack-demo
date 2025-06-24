@@ -70,13 +70,13 @@ El backend estará disponible en [http://localhost:8000/docs](http://localhost:8
 
 ```bash
 cd frontend
-bun install  # o npm install si usas npm
+bun install
 ```
 
 ### Ejecutar el servidor de desarrollo del frontend
 
 ```bash
-bun run dev  # o npm run dev
+bun run dev
 ```
 
 El frontend estará disponible en [http://localhost:5173](http://localhost:5173)
@@ -95,14 +95,13 @@ El frontend estará disponible en [http://localhost:5173](http://localhost:5173)
 
 - Asegúrate de que tanto el backend como el frontend estén en ejecución para la funcionalidad completa.
 - El backend usa `/api` como prefijo para todos los endpoints.
-- El archivo `.env` no debe ser subido al repositorio (ver `.gitignore`).
 
 ---
 
 ## 📦 Stack Tecnológico
 
 - **Backend:** FastAPI, Poetry, Python, Google OAuth2
-- **Frontend:** React, Vite, TypeScript, Bun (o npm)
+- **Frontend:** React, Vite, TypeScript, Bun
 
 ---
 
