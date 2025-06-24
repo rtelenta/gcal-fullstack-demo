@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "gcal-fastapi-backend"
+version = "0.1.0"
+description = "FastAPI backend for Google Calendar demo"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.110.0"
+uvicorn = "^0.29.0"
+requests = "^2.31.0"
+python-dotenv = "^1.0.1"
+load-dotenv = "^0.1.0"
+
+[tool.poetry.dev-dependencies]
+poethepoet = "^0.24.4"
+black = "^24.4.2"
+isort = "^5.13.2"
+
+[tool.poe.tasks]
+dev = "uvicorn main:app --reload --port 8000"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
