@@ -20,7 +20,8 @@ black = "^24.4.2"
 isort = "^5.13.2"
 
 [tool.poe.tasks]
-dev = "uvicorn main:app --reload --port 8000"
+dev = "uvicorn main:app --reload --host 0.0.0.0 --port 8000"
+ngrok = "ngrok http 8000"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

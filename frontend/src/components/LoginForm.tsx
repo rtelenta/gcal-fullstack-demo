@@ -37,7 +37,9 @@ export function LoginForm({
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Bienvenido</CardTitle>
-          <CardDescription>Login with your Google account</CardDescription>
+          <CardDescription>
+            Inicia sesión con tu cuenta de Google
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-6">
