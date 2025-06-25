@@ -9,6 +9,7 @@ Una aplicación fullstack de ejemplo usando FastAPI (Python) para el backend y V
 ```
 backend/   # FastAPI + Poetry + Google OAuth2
 frontend/  # Vite + React + TypeScript
+mobile/    # Expo + React Native
 ```
 
 ---
@@ -40,8 +41,30 @@ cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
 ```
 
-7. Completa los valores en ambos archivos `.env` según corresponda.
+7. Copia el archivo `.env.example` como `.env` en la carpeta `mobile/`:
+
+```bash
+cp mobile/.env.example mobile/.env
+```
+
+8. Completa los valores en los archivos `.env` según corresponda.
    - El archivo `.env` del frontend puede quedarse igual que `.env.example` salvo que el backend esté funcionando en otro puerto o URL.
+   - El archivo `.env` de mobile debe contener, por ejemplo:
+
+```
+API_URL=http://localhost:8000/api
+MOBILE_DEEPLINK_SCHEME=mobile://auth
+```
+
+- Para probar el login de Google desde la app mobile, el backend debe estar disponible en una URL pública accesible desde el dispositivo móvil. Puedes usar [ngrok](https://ngrok.com/) para exponer tu backend local:
+
+```bash
+ngrok http 8000
+```
+
+Luego, usa la URL pública de ngrok (por ejemplo, `https://xxxx.ngrok.io/api`) en la variable `API_URL` de tu `.env` de mobile y como redirect URI en Google Cloud Console.
+
+- Ajusta estos valores según tu entorno de desarrollo o despliegue.
 
 ---
 
@@ -76,10 +99,29 @@ bun install
 ### Ejecutar el servidor de desarrollo del frontend
 
 ```bash
-bun run dev
+bun dev
 ```
 
 El frontend estará disponible en [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📱 Mobile (Expo + React Native)
+
+### Instalar dependencias
+
+```bash
+cd mobile
+bun install
+```
+
+### Ejecutar la app móvil en modo desarrollo
+
+```bash
+bun dev
+```
+
+Esto abrirá Expo Go, donde podrás escanear el QR con tu dispositivo o correr en un emulador.
 
 ---
 
@@ -102,6 +144,7 @@ El frontend estará disponible en [http://localhost:5173](http://localhost:5173)
 
 - **Backend:** FastAPI, Poetry, Python, Google OAuth2
 - **Frontend:** React, Vite, TypeScript, Bun
+- **Mobile:** Expo, React Native
 
 ---
 
